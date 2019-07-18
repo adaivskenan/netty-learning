@@ -35,6 +35,21 @@ public class BlockingIoExample {
     }
 
     private String processRequest(String request){
+    	System.out.println(request);
         return "Processed";
     }
+    
+    
+    /**
+     * How to test:
+     * telnet localhost 8080
+     * */
+    public static void main(String[] args) {
+    	try {
+			new BlockingIoExample().serve(8080);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+    
 }
